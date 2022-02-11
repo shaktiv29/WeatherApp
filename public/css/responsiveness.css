@@ -1,0 +1,12 @@
+@media only screen and (max-width:1100px) {
+    .background-image {
+        background-image: url('/images/weather-background-mobile.jpg');
+        filter: blur(4px);
+    }
+    .head-weather-app {
+        margin-top: 300px;
+    }
+    .max-min-temp {
+        margin-top: 100px;
+    }
+}

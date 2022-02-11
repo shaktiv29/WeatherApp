@@ -13,8 +13,8 @@ const getTempratureData = async (city) => {
     let maxTempratureF = (tempInfo.max_temp*1.8)+32
     minTempratureF = Math.round((minTempratureF*10)/10)
     maxTempratureF = Math.round((maxTempratureF*10)/10)
-    console.log(minTempratureF)
-    console.log(maxTempratureF)
+    // console.log(minTempratureF)
+    // console.log(maxTempratureF)
     $('.max-temprature-f').text(maxTempratureF)
     $('.min-temprature-f').text(minTempratureF)
     $('.max-min-temp').css('display','flex')
