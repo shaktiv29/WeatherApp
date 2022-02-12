@@ -172,9 +172,11 @@
 .current-weather-head {
     font-size: 35px;
     color: rgb(255, 255, 255, 0.8);
+    font-family: 'Roboto', sans-serif;
 }
 
 .current-weather-data {
     font-size: 35px;
     color: darkred;
+    font-family: 'Roboto', sans-serif;
 }
