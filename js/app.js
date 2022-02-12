@@ -7,18 +7,20 @@ const getTempratureData = async (city) => {
 
     tempInfo.min_temp = Math.round((response.data.main.temp_min-273.15) * 10) / 10;
     tempInfo.max_temp = Math.round((response.data.main.temp_max-273.15) * 10) / 10;
-    $('.max-temprature-c').text(tempInfo.max_temp)
-    $('.min-temprature-c').text(tempInfo.min_temp)
-    let minTempratureF = (tempInfo.min_temp*1.8)+32
-    let maxTempratureF = (tempInfo.max_temp*1.8)+32
-    minTempratureF = Math.round((minTempratureF*10)/10)
-    maxTempratureF = Math.round((maxTempratureF*10)/10)
-    $('.max-temprature-f').text(maxTempratureF)
-    $('.min-temprature-f').text(minTempratureF)
-    $('.max-min-temp').css('display','flex')
+    $('.max-temprature-c').text(tempInfo.max_temp);
+    $('.min-temprature-c').text(tempInfo.min_temp);
+    let minTempratureF = (tempInfo.min_temp*1.8)+32;
+    let maxTempratureF = (tempInfo.max_temp*1.8)+32;
+    minTempratureF = Math.round((minTempratureF*10)/10);
+    maxTempratureF = Math.round((maxTempratureF*10)/10);
+    $('.max-temprature-f').text(maxTempratureF);
+    $('.min-temprature-f').text(minTempratureF);
+    $('.max-min-temp').css('display','flex');
+    $('.current-weather-data').text(response.data.weather[0].main)
+    $('.current-weather').css('display','block');
     return tempInfo;
   } catch (errors) {
-    alert("No Internet or Bad Spelling of city");
+    alert("Bad Spelling of city");
   }
 };
 $(document).ready(function () {

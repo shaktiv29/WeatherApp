@@ -87,7 +87,7 @@
 
 .temp-container {
     width: 300px;
-    height: 250px;
+    height: auto;
     background: rgb(255, 255, 255, 0.1);
     backdrop-filter: blur(30px);
     margin: 20px;
@@ -103,7 +103,7 @@
 }
 
 .temprature {
-    font-size: 70px;
+    font-size: 45px;
     font-weight: 500;
     color: #000d66fa;
     margin-top: 20px;
@@ -156,4 +156,25 @@
 
 .search-history li:hover {
     background-color: rgb(255, 255, 255, 0.2);
+}
+
+.current-weather {
+    background: rgb(255, 255, 255, 0.1);
+    padding: 15px 50px;
+    display: inline-block;
+    margin: 20px auto;
+    margin-bottom: 0;
+    border-radius: 5px;
+    max-width: 620px;
+    display: none;
+}
+
+.current-weather-head {
+    font-size: 35px;
+    color: rgb(255, 255, 255, 0.8);
+}
+
+.current-weather-data {
+    font-size: 35px;
+    color: darkred;
 }
