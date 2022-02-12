@@ -99,6 +99,7 @@
     font-size: 30px;
     font-weight: 300;
     color: rgb(4, 23, 29);
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 .temprature {
@@ -106,6 +107,7 @@
     font-weight: 500;
     color: #000d66fa;
     margin-top: 20px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 .search-bar {
@@ -147,6 +149,7 @@
     list-style: none;
     padding: 10px 15px;
     /* width: 100%; */
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
