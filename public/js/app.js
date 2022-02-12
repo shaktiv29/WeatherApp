@@ -13,8 +13,6 @@ const getTempratureData = async (city) => {
     let maxTempratureF = (tempInfo.max_temp*1.8)+32
     minTempratureF = Math.round((minTempratureF*10)/10)
     maxTempratureF = Math.round((maxTempratureF*10)/10)
-    // console.log(minTempratureF)
-    // console.log(maxTempratureF)
     $('.max-temprature-f').text(maxTempratureF)
     $('.min-temprature-f').text(minTempratureF)
     $('.max-min-temp').css('display','flex')
@@ -24,11 +22,17 @@ const getTempratureData = async (city) => {
   }
 };
 $(document).ready(function () {
-
-$(".app-input-submit").on('click',function(e){
-
+    $(".app-input-submit").on('click',function(e){
+      let historycities = JSON.parse(localStorage.getItem("CITYHISTORIES"));
+      if(!historycities){
+        historycities = []
+      }
     if ($(".app-input-city").val()){
         const tempInfo = getTempratureData($(".app-input-city").val())
+        if ($(".app-input-city").val()!==historycities[Object.keys(historycities).length-1]){
+        historycities[Object.keys(historycities).length] = ($(".app-input-city").val())
+        localStorage.setItem('CITYHISTORIES',JSON.stringify(historycities));
+        }
     }
 })
 

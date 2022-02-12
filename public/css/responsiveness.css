@@ -8,5 +8,7 @@
     }
     .max-min-temp {
         margin-top: 100px;
+        width: 60%;
+        flex-direction: column;
     }
 }

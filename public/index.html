@@ -11,7 +11,8 @@
     <script src="http://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/searchhistory.js"></script>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
@@ -22,11 +23,13 @@
     </h1>
     <div class="app-body-container">
         <div class="search-bar">
-            <input type="text" class="app-input-city" placeholder="Enter the City Name Please">
+            <input type="text" autocomplete="off" spellcheck="false" class="app-input-city" placeholder="Enter the City Name">
             </input>
-            <button class="app-input-submit">
+            <div class="search-history">
+            </div>
+            <div class="app-input-submit">
                 <i class="fa fa-search search-icon"></i>
-            </button>
+            </div>
         </div>
         <div class="max-min-temp">
             <div class="loading-app"></div>

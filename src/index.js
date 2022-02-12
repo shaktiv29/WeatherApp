@@ -6,7 +6,7 @@ const __dirname = path.resolve();
 
 const staticPath = path.join(__dirname,"/public")
 
-console.log(staticPath)
+// console.log(staticPath)
 
 app.use(express.static(staticPath))
 
@@ -15,5 +15,5 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(8000,()=>{
-    console.log('listening')
+    console.log('Listening on PORT '+ '8000')
 })
