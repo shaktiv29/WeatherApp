@@ -27,13 +27,18 @@ $(document).ready(function () {
       if(!historycities){
         historycities = []
       }
-    if ($(".app-input-city").val()){
-        const tempInfo = getTempratureData($(".app-input-city").val())
-        if ($(".app-input-city").val()!==historycities[Object.keys(historycities).length-1]){
-        historycities[Object.keys(historycities).length] = ($(".app-input-city").val())
-        localStorage.setItem('CITYHISTORIES',JSON.stringify(historycities));
-        }
+      if ($(".app-input-city").val()){
+          const tempInfo = getTempratureData($(".app-input-city").val())
+          if ($(".app-input-city").val()!==historycities[Object.keys(historycities).length-1]){
+          historycities[Object.keys(historycities).length] = ($(".app-input-city").val())
+          localStorage.setItem('CITYHISTORIES',JSON.stringify(historycities));
+      }
     }
-})
-
+  });
+  $(".app-input-city").on('keyup',(e)=>{
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      $(".app-input-submit").click();
+    }
+  })
 });
