@@ -18,24 +18,23 @@ const getTempratureData = async (city) => {
     $('.max-min-temp').css('display','flex');
     $('.current-weather-data').text(response.data.weather[0].main)
     $('.current-weather').css('display','block');
-    return tempInfo;
+    let historycities = JSON.parse(localStorage.getItem("CITYHISTORIES"));
+      if(!historycities){
+        historycities = []
+      }
+    if ($(".app-input-city").val()!==historycities[Object.keys(historycities).length-1]){
+      historycities[Object.keys(historycities).length] = ($(".app-input-city").val())
+      localStorage.setItem('CITYHISTORIES',JSON.stringify(historycities));
+      }
   } catch (errors) {
     alert("Bad Spelling of city");
   }
 };
 $(document).ready(function () {
     $(".app-input-submit").on('click',function(e){
-      let historycities = JSON.parse(localStorage.getItem("CITYHISTORIES"));
-      if(!historycities){
-        historycities = []
-      }
       if ($(".app-input-city").val()){
-          const tempInfo = getTempratureData($(".app-input-city").val())
-          if ($(".app-input-city").val()!==historycities[Object.keys(historycities).length-1]){
-          historycities[Object.keys(historycities).length] = ($(".app-input-city").val())
-          localStorage.setItem('CITYHISTORIES',JSON.stringify(historycities));
+        getTempratureData($(".app-input-city").val())
       }
-    }
   });
   $(".app-input-city").on('keyup',(e)=>{
     if (e.keyCode === 13) {
